@@ -1,37 +1,226 @@
-# Fast Website Scanner
+#VULNSCAN
+print("""\033[1;92m
+\033[1;35m
+…………………▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+……………▄▄█▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓▓█▄▄
+…………▄▀▀▓▒░░░░░░░░░░░░░░░░▒▓▓▀▄
+………▄▀▓▒▒░░░░░░░░░░░░░░░░░░░▒▒▓▀▄
+……..█▓█▒░░░░░░░░░░░░░░░░░░░░░▒▓▒▓█
+…..▌▓▀▒░░░░░░░░░░░░░░░░░░░░░░░░▒▀▓█
+…..█▌▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░▒▓█
+…▐█▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓█▌
+…█▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓█
+..█▐▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒█▓█
+…█▓█▒░░░░░░░░░░░░░░░░░░░░░░░░░░░▒█▌▓█
+..█▓▓█▒░░░░▒█▄▒▒░░░░░░░░░▒▒▄█▒░░░░▒█▓▓█
+..█▓█▒░▒▒▒▒░░▀▀█▄▄░░░░░▄▄█▀▀░░▒▒▒▒░▒█▓█
+.█▓▌▒▒▓▓▓▓▄▄▄▒▒▒▀█░░░░█▀▒▒▒▄▄▄▓▓▓▓▒▒▐▓█
+.██▌▒▓███▓█████▓▒▐▌░░▐▌▒▓████▓████▓▒▐██
+..██▒▒▓███▓▓▓████▓▄░░░▄▓████▓▓▓███▓▒▒██
+..█▓▒▒▓██████████▓▒░░░▒▓██████████▓▒▒▓█
+..█▓▒░▒▓███████▓▓▄▀░░▀▄▓▓███████▓▒░▒▓█
+….█▓▒░▒▒▓▓▓▓▄▄▄▀▒░░░░░▒▀▄▄▄▓▓▓▓▒▒░▓█
+……█▓▒░▒▒▒▒░░░░░░▒▒▒▒░░░░░░▒▒▒▒░▒▓█
+………█▓▓▒▒▒░░██░░▒▓██▓▒░░██░░▒▒▒▓▓█
+………▀██▓▓▓▒░░▀░▒▓████▓▒░▀░░▒▓▓▓██▀
+………….░▀█▓▒▒░░░▓█▓▒▒▓█▓▒░░▒▒▓█▀░
+…………█░░██▓▓▒░░▒▒▒░▒▒▒░░▒▓▓██░░█
+………….█▄░░▀█▓▒░░░░░░░░░░▒▓█▀░░▄█
+…………..█▓█░░█▓▒▒▒░░░░░▒▒▒▓█░░█▓█
+…………….█▓█░░█▀█▓▓▓▓▓▓█▀░░█░█▓█▌
+……………..█▓▓█░█░█░█▀▀▀█░█░▄▀░█▓█
+……………..█▓▓█░░▀█▀█░█░█▄█▀░░█▓▓█
+………………█▓▒▓█░░░░▀▀▀▀░░░░░█▓▓█
+………………█▓▒▒▓█░░░░ ░░░░░░░█▓▓█
+………………..█▓▒▓██▄█░░░▄░░▄██▓▒▓█
+………………..█▓▒▒▓█▒█▀█▄█▀█▒█▓▒▓█
+………………..█▓▓▒▒▓██▒▒██▒██▓▒▒▓█
+………………….█▓▓▒▒▓▀▀███▀▀▒▒▓▓█
+……………………▀█▓▓▓▓▒▒▒▒▓▓▓▓█▀
+………………………..▀▀██▓▓▓▓██▀
 
-print("""'\033[1;92m'                                                 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓███████▓▒░
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+ ░▒▓█▓▒▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+ ░▒▓█▓▒▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+  ░▒▓█▓▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+  ░▒▓█▓▓█▓▒░ ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░
+   ░▒▓██▓▒░   ░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░
 
-╔╗──╔╦╗─╔╦╗──╔═╗─╔╦═══╦═══╦═══╦═╗─╔╗
-║╚╗╔╝║║─║║║──║║╚╗║║╔═╗║╔═╗║╔═╗║║╚╗║║   
-╚╗║║╔╣║─║║║──║╔╗╚╝║╚══╣║─╚╣║─║║╔╗╚╝║\033[4;37m
-─║╚╝║║║─║║║─╔╣║╚╗║╠══╗║║─╔╣╚═╝║║╚╗║║
-─╚╗╔╝║╚═╝║╚═╝║║─║║║╚═╝║╚═╝║╔═╗║║─║║║
-──╚╝─╚═══╩═══╩╝─╚═╩═══╩═══╩╝─╚╩╝─╚═╝ 
 
-               \033[1;32m Coded by: Mr.Dark Hcktvst""") 
-print("\033[1;31;36m__________________________________________________________")
+ ░▒▓███████▓▒░░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓███████▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░
+ ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░
+       ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░
+       ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░
+░▒▓███████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░
+
+\033[1;37m╔══════════════════════════════════════════════════╗
+\033[1;37m║\033[1;35mCREATED BY : MR.DARK HCKTVST                      \033[1;37m║
+\033[1;37m║\033[1;35mCREATED-TIME :- Monday, Dec 13, 2024         \033[1;37m     ║
+\033[1;37m║\033[1;35mGITHUB :- https://github.com/Darkness1268         \033[1;37m║
+\033[1;37m║\033[1;35mFACEBOOK :- https://www.facebook.com/MrDarkHcktvst\033[1;37m║
+\033[1;37m╚══════════════════════════════════════════════════╝
+\033[1;92m
+""")
+from rich.console import Console
+from rich.table import Table
+from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TimeElapsedColumn
+from rich.live import Live
+from rich.panel import Panel
+from rich.style import Style
 import requests
-from termcolor import colored
-from concurrent.futures import ThreadPoolExecutor
+import socket
+import ssl
+import whois
+import dns.resolver
+from datetime import datetime
+import urllib.parse
+import time
+import concurrent.futures
+import os
+import platform
+import pyfiglet
 
-def check_website(website):
+COLORS = {
+    'primary': 'deep_sky_blue2',
+    'secondary': 'slate_blue3',
+    'success': 'green3',
+    'warning': 'yellow3',
+    'error': 'red3',
+    'info': 'cyan2',
+    'text': 'grey84',
+    'highlight': 'grey84'
+}
+
+console = Console()
+
+def clean_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def clean_url(url):
+    url = url.strip().lower()
+    if not url.startswith(('http://', 'https://')):
+        url = 'https://' + url
+    return url
+
+def get_domain(url):
+    parsed = urllib.parse.urlparse(url)
+    return parsed.netloc
+
+def format_date(date_str):
+    if not date_str:
+        return "Not Available"
     try:
-        response = requests.get(website)
-        if response.status_code == 200:
-            print(colored(f"{website} is reachable", 'green'))
+        if isinstance(date_str, str):
+            date_obj = datetime.strptime(date_str, "%b %d %H:%M:%S %Y GMT")
         else:
-            print(colored(f"{website} returned status code {response.status_code}", 'yellow'))
-    except requests.exceptions.RequestException:
-        print(colored(f"{website} is not reachable", 'red'))
+            date_obj = date_str
+        return date_obj.strftime("%d %B %Y")
+    except Exception:
+        return str(date_str)
+
+def get_security_headers(headers):
+    security_headers = {
+        'Strict-Transport-Security': 'HSTS',
+        'Content-Security-Policy': 'CSP',
+        'X-Frame-Options': 'X-Frame',
+        'X-Content-Type-Options': 'X-Content-Type',
+        'X-XSS-Protection': 'XSS Protection',
+        'Referrer-Policy': 'Referrer Policy',
+        'Feature-Policy': 'Feature Policy'
+    }
+    return {new_name: headers.get(header, 'Not Available') 
+            for header, new_name in security_headers.items()}
+
+def check_admin_panel(url, timeout=3):
+    admin_paths = ['/admin', '/administrator', '/wp-admin', '/login', 
+                  '/panel', '/admin.php', '/admin/login', '/cp']
+    found_paths = []
+    
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        def check_path(path):
+            try:
+                test_url = url.rstrip('/') + path
+                response = requests.get(test_url, timeout=timeout, allow_redirects=False)
+                if response.status_code in [200, 301, 302, 403]:
+                    return test_url
+            except:
+                pass
+            return None
+        
+        futures = [executor.submit(check_path, path) for path in admin_paths]
+        for future in concurrent.futures.as_completed(futures):
+            if future.result():
+                found_paths.append(future.result())
+    
+    return found_paths
+
+def grab_banner(url, timeout=5):
+    try:
+        response = requests.get(url, timeout=timeout)
+        server = response.headers.get('Server', 'Not Available')
+        x_powered_by = response.headers.get('X-Powered-By', 'Not Available')
+        return server, x_powered_by
+    except Exception as e:
+        return f'Error: {str(e)}', 'Not Available'
+
+def get_technologies(url):
+    try:
+        response = requests.get(url)
+        return "Analysis not implemented"
+    except:
+        return "Not Available"
+
+def get_server_location(url):
+    try:
+        response = requests.get(url)
+        server_ip = response.raw._connection.sock.getpeername()[0]
+        location = requests.get(f"https://ipinfo.io/{server_ip}/json").json()
+        return location.get("city", "Not Available"), location.get("country", "Not Available")
+    except:
+        return "Not Available", "Not Available"
+
+def create_styled_table(title, data):
+    table = Table(title=title, style=COLORS['primary'])
+    for header in data[0].keys():
+        table.add_column(header)
+    for row in data:
+        table.add_row(*[str(value) for value in row.values()])
+    return table
+
+def scan_website(url):
+    url = clean_url(url)
+    results = {
+        'URL': url,
+        'Domain': get_domain(url),
+        'Admin Panel': check_admin_panel(url),
+        'Server Banner': grab_banner(url),
+        'Technologies': get_technologies(url),
+        'Server Location': get_server_location(url)
+    }
+    return results
 
 def scan_websites(file_path):
     with open(file_path, 'r') as file:
-        websites = [website.strip() for website in file.readlines()]
-
-    with ThreadPoolExecutor(max_workers=10) as executor:
-        executor.map(check_website, websites)
-
+        websites = file.readlines()
+    
+    results = []
+    with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), BarColumn(), TimeElapsedColumn()) as progress:
+        task = progress.add_task("[cyan]Scanning websites...", total=len(websites))
+        with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+            future_to_url = {executor.submit(scan_website, clean_url(url)): url for url in websites}
+            for future in concurrent.futures.as_completed(future_to_url):
+                url = future_to_url[future]
+                try:
+                    result = future.result()
+                    results.append(result)
+                except Exception as e:
+                    console.print(f"[red]Error scanning {url}: {e}")
+                progress.update(task, advance=1)
+    
+    console.print(create_styled_table("Scan Results", results))
 if __name__ == "__main__":
-    file_path = input("Enter the file path containing websites: ")
-    scan_websites(file_path)
+    file_path = input("\033[1;35mEnter the file path containing websites: ")
+    scan_websites(file_path) 
